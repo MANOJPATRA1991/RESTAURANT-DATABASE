@@ -156,19 +156,6 @@ class WebServerHandler(BaseHTTPRequestHandler):
                 self.send_header('Content-type', 'text/html')
                 self.send_header('Location', '/restaurant')
                 self.end_headers()
-                #
-                # output = ""
-                # output += "<html><body><h1>Create New Restaurant</h1> <a href='/restaurant'>" \
-                #           "Back to Home</a>" \
-                #           "<h2>Restaurant <em>{}</em> created!!</h2>".format(message_content[0])
-                # output += "<form method='POST' enctype='multipart/form-data' " \
-                #           "action='/restaurant'>" \
-                #           "<input name='restaurant_name' type='text' placeholder='Enter restaurant name'>" \
-                #           "<input type='submit' value='Submit'></form>"
-                # output += "</body></html>"
-                #
-                # self.wfile.write(output)
-                # print(output)
 
             if self.path.endswith("/edit"):
                 ctype, pdict = cgi.parse_header(self.headers.getheader('content-type'))
